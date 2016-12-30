@@ -862,16 +862,16 @@ func (t *CardTransactionChaincode) get_caller_data(stub shim.ChaincodeStubInterf
 //		  initial arguments passed to other things for use in the called function e.g. name -> ecert
 //==============================================================================================================================
 
-func (t *CardTransactionChaincode) Invoke(stub shim.ChaincodeStubInterface) ([]byte, error) {
+func (t *CardTransactionChaincode) invoke(stub shim.ChaincodeStubInterface) ([]byte, error) {
 	function, args := stub.GetFunctionAndParameters()
 	if strings.HasPrefix(function,"get_") {
 		return t.Query(stub , function , args) 
 	}
-	return t.Invoke_internal(stub , function , args) 
+	return t.Invoke(stub , function , args) 
 }
 
 
-func (t *CardTransactionChaincode) Invoke_internal(stub shim.ChaincodeStubInterface, function string, args []string) ([]byte, error) {
+func (t *CardTransactionChaincode) Invoke(stub shim.ChaincodeStubInterface, function string, args []string) ([]byte, error) {
 	
 	//caller, caller_affiliation, err := t.get_caller_data(stub)
 	caller := args[0]
