@@ -861,7 +861,7 @@ func (t *CardTransactionChaincode) get_caller_data(stub shim.ChaincodeStubInterf
 //	Invoke - Called on chaincode invoke. Takes a function name passed and calls that function. Converts some
 //		  initial arguments passed to other things for use in the called function e.g. name -> ecert
 //==============================================================================================================================
-
+/*
 func (t *CardTransactionChaincode) invoke(stub shim.ChaincodeStubInterface) ([]byte, error) {
 	function, args := stub.GetFunctionAndParameters()
 	if strings.HasPrefix(function,"get_") {
@@ -869,7 +869,7 @@ func (t *CardTransactionChaincode) invoke(stub shim.ChaincodeStubInterface) ([]b
 	}
 	return t.Invoke(stub , function , args) 
 }
-
+*/
 
 func (t *CardTransactionChaincode) Invoke(stub shim.ChaincodeStubInterface, function string, args []string) ([]byte, error) {
 	
