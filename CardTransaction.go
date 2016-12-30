@@ -137,7 +137,7 @@ type ShopLedger_Holder struct {
 //==============================================================================================================================
 //	Init Function - Called when the user deploys the chaincode																	
 //==============================================================================================================================
-func (t *CardTransactionChaincode) Init(stub shim.ChaincodeStubInterface) ([]byte, error) {
+func (t *CardTransactionChaincode) Init(stub shim.ChaincodeStubInterface, function string, args []string) ([]byte, error) {
 	
 	// create and put shop_holder
 	var shop_holder Shop_Holder
